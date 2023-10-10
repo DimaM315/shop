@@ -3,7 +3,7 @@
 # SHOW DATABASES;
 # USE shopDB; SHOW TABLES; SHOW TABLES FROM shopDB;
 
-
+from vars import DB_HOST, DB_USER, DB_PASSWORD, DB_NAME
 from mysql.connector import connect, Error
 
 
@@ -11,10 +11,10 @@ class DBController:
 	# класс отвечающий за взаимодействие бд. Основной класс который будет использовать приложение.
 
 	__CONN = connect(
-	        host="localhost",
-	        user="root",
-	        password="root",
-	        db="shopDB"
+	        host=DB_HOST,
+	        user=DB_USER,
+	        password=DB_PASSWORD,
+	        db=DB_NAME
 	    ) # При окончании использования класса, нужно закрывать коннект.
 
 
