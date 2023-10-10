@@ -1,0 +1,42 @@
+PageContoller
+	--- Отвечает за отображение страниц.
+
+UserController
+	--- Отвечает за любое взаимодействие с логикой пользователя.
+
+ChatController
+	--- Отвечает за любое взаимодействие с логикой чата.
+
+
+БД.
+create table users (
+id_user int (10) AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+login varchar(50) NOT NULL UNIQE,
+password varchar(15) NOT NULL,
+date_reged datetime NOT NULL,
+role int(3) NOT NULL,
+PRIMARY KEY (id_user),
+FOREIGN KEY (role) REFERENCES roles (role_id)
+);
+
+create table roles (
+role_id int(3) AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+PRIMARY KEY (role_id)
+);
+
+
+create table personal_color (
+color varchar(20) NOT NULL UNIQUE,
+user_id int(10) NOT NULL,
+PRIMARY KEY (color), 
+FOREIGN KEY (user_id) REFERENCES users (user_id) 
+);
+
+create table msg_storage (
+from_user_id int(10) NOT NULL,
+message text NOT NULL,
+date_sent date NOT NULL,
+FOREIGN KEY (from_user_id) REFERENCES users (user_id) 
+);

@@ -1,0 +1,25 @@
+﻿{% extends 'base.html'%}
+
+{% block title %}
+	WH - Приветствуем вас!
+{% endblock %}
+
+{%block url_static_css%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hello.css')}}">
+{%endblock%}
+
+{%block url_static_js%}
+<script type="text/javascript" src="{{ url_for('static', filename='js/helloScripts.js')}}" defer></script>
+{%endblock%}
+
+{% block content %}
+
+	<div id="welcome_text">
+		BitGoals was created by a team of veteran entrepreneurs from the sports and gaming industries, that joined forces in order to create one of the biggest, most fundamental projects in the sports, gaming and crypto worlds. Each team member brought his own experience, ideas and passions to the project, creating the unique and ambitious combination that you can see today.
+	</div>
+
+	<div id="log_wrap">
+		<div class="btn" id="login"><a href="{{url_for('enter')}}">Авторизация</a></div>
+	</div>
+
+{% endblock %}

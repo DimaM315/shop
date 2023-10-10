@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+
+{% block title %}
+	Создать аккаунт сотрудника
+{% endblock %}
+
+{%block url_static_css%}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/enter.css')}}">
+	
+{%endblock%}
+
+{%block url_static_js%}
+
+{%endblock%}
+
+{% block content %}
+	<div class="header">
+		<div class="current_user_name"><a href="{{url_for('home_user_page')}}">{{ current_user_name }}</a></div>
+		<div class="links_block">
+			<div class="main_char_link"><a href="{{url_for('chat')}}">Общий чат</a></div>
+			<div class="schedule_link">График смен</div>
+			<div class="warehouse_link">Склад</div>
+			<div class="create_new_user">Создать аккаунт сотрудника</div>
+			<div class="logout">
+				<form action="{{url_for('logout')}}" method="POST">
+					<input type="hidden" name="logout_token" value="{{logout_token}}">
+					<button type="submit" class="btn" id="btn_logout">Выйти из аккаунта</button>
+				</form>
+				
+			</div>
+		</div>
+		
+	</div>
+	
+	<h1>Создать аккаунт нового сотрудника</h1>
+
+	<div class="form_wrapper">
+		<form id="form_auto" action="{{url_for('create_new_user')}}" method="POST" class="form">
+			Введите логин: <input type="text" id="auto_login" name="login" class="input" value=""><br>
+			Введите пароль: <input type="text" id="auto_pass" name="password" class="input" value=""><br>
+			Введите имя и фамилию: <input type="text" id="auto_pass" name="name" class="input" value=""><br>
+			<input type="hidden" name="token" value="{{token}}">
+			<button type="submit" class="btn" id="enter">Создать аккаунт</button>
+		
+			{% if has_error: %}
+				<div class="error">{{result_msg}}</div>
+			{% else %}
+				<div class="success">{{result_msg}}</div>
+			{% endif %}
+		</form>
+	</div>
+	
+
+{% endblock %}

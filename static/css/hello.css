@@ -1,0 +1,44 @@
+body{
+	padding: 20px 150px 0px 40px;
+	background-color: rgba(0,0,0, .1);
+}
+
+#welcome_text{
+	font-size: 1.4em;
+	font-family: Tahoma;
+	margin:100px 23%;
+}
+
+#log_wrap{
+	display: flex;
+	justify-content: space-around;
+	padding: 0px 200px;
+}
+
+
+
+
+
+#login a {
+	list-style-type: none;
+	outline-style: none;
+	color: white;
+	text-decoration: none;
+}
+#login:hover{
+	transition: .2s;
+	background-color: #4cd8f4;
+}
+
+.btn{
+	display: inline-block;
+	padding: 10px;
+	font-family: monospace;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	border:.5px solid #4C5CF4;
+	background-color: #4C8BF4;
+}

@@ -1,0 +1,37 @@
+.header {
+	background: aquamarine;
+    padding: 10px;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header div {
+	display: inline-block;
+	cursor: pointer;
+	padding: 20px;
+}
+
+.current_user_name {
+	margin-top: 19px;
+	color: blue;
+	font-weight: bold;
+}
+
+.links_block {
+
+}
+.links_block div:hover {
+	background-color: gray;
+	color: aliceblue;
+	transition: .3s;
+}
+
+.header a {
+    text-decoration: none;
+    color: currentcolor;
+}
+#btn_logout:hover {
+	background-color: #4c8bf49c;
+	transition: .3s;
+}

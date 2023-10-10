@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block title %}
+	{{ name }} - WH
+{% endblock %}
+
+{%block url_static_css%}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/user.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css')}}">
+{%endblock%}
+
+{%block url_static_js%}
+	<script type="text/javascript" src="{{ url_for('static', filename='js/userPageScripts.js')}}" defer></script>
+{%endblock%}
+
+{% block content %}
+	
+	<div class="header">
+		<div class="current_user_name"><a href="{{url_for('home_user_page')}}">{{ current_user_name }}</a></div>
+		<div class="links_block">
+			<div class="main_char_link"><a href="{{url_for('chat')}}">Общий чат</a></div>
+			<div class="schedule_link">График смен</div>
+			<div class="warehouse_link">Склад</div>
+			{% if is_admin %}
+			<div class="create_new_user"><a href="{{url_for('create_new_user')}}">Создать аккаунт сотрудника</a></div>
+			{% endif %}
+			<div class="logout">
+				<form action="{{url_for('logout')}}" method="POST">
+					<input type="hidden" name="logout_token" value="{{logout_token}}">
+					<button type="submit" class="btn" id="btn_logout">Выйти из аккаунта</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="user_info_stage">
+		<h1>Информация о пользователе{% if yourPage %}<em>(Ваша страница)</em>{% endif %}:</h1>
+
+		<table>
+			<tr><td>Имя фамилия:</td><td>{{name}}</td></tr>
+			<tr><td>Дата регистрации:</td><td>{{created_time}}</td></tr>
+			<tr><td>Логин:</td><td>{{login}}</td></tr>
+		</table>
+	</div>
+{% endblock %}

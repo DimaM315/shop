@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title%}
+	404 error
+{% endblock %}
+
+{% block content %}
+	<img src="{{url_for('static', filename='img/404.png')}}" style="display: block;margin-left: auto;margin-right: auto;">
+	<a href="{{url_for('index')}}" style="display: block;margin-left: auto;margin-right: auto;">Return to main page</a>
+{% endblock %}

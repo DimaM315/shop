@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block title %}
+	{{ FI }} - BS
+{% endblock %}
+
+{%block url_static_css%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/enter.css')}}">
+{%endblock%}
+
+{%block url_static_js%}
+<script type="text/javascript" src="{{ url_for('static', filename='js/userPageScripts.js')}}" defer></script>
+{%endblock%}
+
+{% block content %}
+	
+	<h1>Страница авторизации</h1>
+
+	<div class="form_wrapper">
+		<form id="form_auto" action="{{url_for('enter')}}" method="POST" class="form">Авторизация<br><br>
+			Введите логин: <input type="text" id="auto_login" name="login" class="input" value=""><br>
+			Введите пароль: <input type="text" id="auto_pass" name="password" class="input" value=""><br>
+			<input type="hidden" name="token" value="{{token}}">
+			<button type="submit" class="btn" id="enter">Войти</button>
+		
+			{% if has_error: %}
+				<div class="error">Вы ввели неверные данные</div>
+			{% endif %}
+		</form>
+
+		
+	</div>
+	
+
+{% endblock %}

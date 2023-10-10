@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title %}
+	График сотрудников
+{% endblock %}
+
+{%block url_static_css%}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/schedule.css')}}">
+{%endblock%}
+
+{%block url_static_js%}
+	<script type="text/javascript" src="{{ url_for('static', filename='js/userPageScripts.js')}}" defer></script>
+{%endblock%}
+
+{% block content %}
+	
+	<div class="header">
+		<div class="current_user_name">Имя Фамилия</div>
+		<div class="links_block">
+			<div class="main_char_link">Общий чат</div>
+			<div class="schedule_link">График смен</div>
+			<div class="warehouse_link">Склад</div>
+			<div class="create_new_user">Создать аккаунт сотрудника</div>
+			<div class="logout">Выйти из аккаунта</div>
+		</div>
+	</div>
+
+	<div class="schedule_stage">
+		
+	</div>
+	
+{% endblock %}

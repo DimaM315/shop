@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}
+				
+	{% endblock %}</title>
+
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css')}}">
+	{%block  url_static_css%}{%endblock%}
+	
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+	{%block  url_static_js%}{%endblock%}
+
+</head>
+<body>
+
+<!--
+{% block header %}
+	<div class="header">
+		<div class="current_user_name"><a href="{{url_for('home_user_page')}}">Имя Фамилия</a></div>
+		<div class="links_block">
+			<div class="main_char_link">Общий чат</div>
+			<div class="schedule_link">График смен</div>
+			<div class="warehouse_link">Склад</div>
+			{% if is_admin %}
+			<div class="create_new_user"><a href="{{url_for('create_new_user')}}">Создать аккаунт сотрудника</a></div>
+			{% endif %}
+			<div class="logout">
+				<form action="{{url_for('logout')}}" method="POST">
+					<input type="hidden" name="logout_token" value="{{logout_token}}">
+					<button type="submit" class="btn" id="btn_logout">Выйти из аккаунта</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+{% endblock %}
+-->
+
+{% block content %}
+	
+{% endblock %}
+</body>
+</html>

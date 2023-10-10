@@ -1,0 +1,57 @@
+*{
+	margin:0px;
+	padding:0px;
+	overflow-x: hidden;
+}
+body{
+	background-color: white;
+}
+a{
+	text-decoration:none; 
+	display: contents;
+	color:white;
+}
+
+
+
+
+
+
+
+.btn{
+	display: inline-block;
+	padding: 10px;
+	font-family: Arial;
+	font-size: 1.0em;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+	border:.5px solid #4C5CF4;
+	background-color: #4C8BF4;
+}
+
+
+
+
+
+.user_info_stage{
+	margin-top: 8%;
+	display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    background: bisque;
+}
+.user_info_stage h1 {
+	margin-bottom: 35px;
+	color: brown;
+}
+.user_info_stage table{
+	font-size: x-large;
+}
+.user_info_stage table td{
+	margin-left: 20px;
+}
+td {
+	padding: 5px 7px;
+}

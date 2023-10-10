@@ -1,0 +1,56 @@
+PageContoller
+	--- Отвечает за отображение страниц.
+
+UserController
+	--- Отвечает за любое взаимодействие с логикой пользователя.
+
+ChatController
+	--- Отвечает за любое взаимодействие с логикой чата.
+
+
+БД.
+create table IF NOT EXISTS users (
+id_user int (10) AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+login varchar(50) NOT NULL UNIQUE,
+password varchar(64) NOT NULL,
+date_reged datetime NOT NULL,
+role varchar(13) NOT NULL,
+PRIMARY KEY (id_user),
+FOREIGN KEY (role) REFERENCES roles (name)
+);
+ ALTER TABLE users ADD COLUMN color_in_chat VARCHAR(50) NOT NULL;
+
+
+create table IF NOT EXISTS roles (
+role_id int(3) AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+PRIMARY KEY (role_id)
+);
+
+
+
+create table IF NOT EXISTS msg_storage (
+from_user_id int(10) NOT NULL,
+message text NOT NULL,
+date_sent date NOT NULL,
+FOREIGN KEY (from_user_id) REFERENCES users (user_id) 
+);
+
+
+
+Добавление ролей
+insert into roles(name) 
+VALUES 
+('user'),
+('admin');
+
+
+insert into users(name, login, password, date_reged, role)
+VALUES 
+('Имя Фамилия', 'user1', '77d9d48d2ac6ca6fff103f5f87d3c05531349e8ba805ea88dbd76e266a9cd16f', now(), 'user'),
+('Name Surname', 'admin1', '750ac79b05b8246dfc4de67dd77f37c39da1b37114870766d5de886bc67d9c1c', now(), 'admin');
+
+
+
+UPDATE users SET color_in_chat = 'red' WHERE id_user = 1';
